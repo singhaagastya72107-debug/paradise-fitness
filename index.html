@@ -461,6 +461,60 @@
         .price-features li i { color: var(--accent); font-size: 0.8rem; }
         .price-card .btn { width: 100%; justify-content: center; font-size: 0.8rem; padding: 14px 20px; }
 
+        /* ===== NEW STYLES FOR MEMBERSHIP PRICE CARD ===== */
+        .membership-prices {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .membership-price-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .membership-price-item:last-child {
+            border-bottom: none;
+        }
+        .price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .original-price {
+            color: var(--text-muted);
+            text-decoration: line-through;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+        .discounted-price {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--accent);
+            letter-spacing: 1px;
+            line-height: 1;
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+        .duration {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .save-badge {
+            background: rgba(230, 0, 0, 0.15);
+            border: 1px solid rgba(230, 0, 0, 0.3);
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        /* ===== END NEW STYLES ===== */
+
         .testimonials { background: var(--bg-dark); }
         .testimonials-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px;
@@ -657,6 +711,7 @@
             .section { padding: 50px 18px; }
             .price-card { padding: 30px 20px; }
             .price-amount { font-size: 2.8rem; }
+            .discounted-price { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -786,7 +841,6 @@
             <div class="trainer-card">
                 <div class="trainer-avatar">
                     <img src="marshal.jpeg" alt="Marshal - Personal Trainer">
-                    <span class="badge-owner"><i class="fas fa-crown"></i> Owner</span>
                 </div>
                 <div class="trainer-info">
                     <h3 class="trainer-name">Marshal</h3>
@@ -812,21 +866,68 @@
             <p class="section-desc" style="margin-left:auto;margin-right:auto;">Simple, transparent, and affordable pricing. Start your fitness journey today.</p>
         </div>
         <div class="pricing-grid">
+            <!-- CARD 1: MEMBERSHIP PLANS (UPDATED WITH BIG PRICES) -->
             <div class="price-card">
                 <div class="price-icon"><i class="fas fa-dumbbell"></i></div>
-                <h3 class="price-plan-name">General Membership</h3>
-                <div class="price-amount"><span class="currency">₹</span>1,500</div>
-                <p class="price-period">per month</p>
-                <ul class="price-features">
-                    <li><i class="fas fa-check"></i> Full gym access</li>
-                    <li><i class="fas fa-check"></i> All strength equipment</li>
-                    <li><i class="fas fa-check"></i> Cardio machines</li>
-                    <li><i class="fas fa-check"></i> Locker room access</li>
-                    <li><i class="fas fa-check"></i> Open 7 days a week</li>
-                    <li><i class="fas fa-check"></i> Till 11 PM</li>
+                <h3 class="price-plan-name">Membership Plans</h3>
+                <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:20px;">Pick a duration &amp; save more!</p>
+                <ul class="membership-prices">
+                    <li class="membership-price-item">
+                        <div class="price-row">
+                            <span class="original-price">₹2,000</span>
+                            <span class="save-badge">SAVE ₹500</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="discounted-price">₹1,500</span>
+                            <span class="duration">/ month</span>
+                        </div>
+                    </li>
+                    <li class="membership-price-item">
+                        <div class="price-row">
+                            <span class="original-price">₹5,000</span>
+                            <span class="save-badge">SAVE ₹500–₹1,000</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="discounted-price">₹4,500–₹4,000</span>
+                            <span class="duration">/ 3 months</span>
+                        </div>
+                    </li>
+                    <li class="membership-price-item">
+                        <div class="price-row">
+                            <span class="original-price">₹9,000</span>
+                            <span class="save-badge">SAVE ₹1,000–₹1,500</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="discounted-price">₹8,000–₹7,500</span>
+                            <span class="duration">/ 6 months</span>
+                        </div>
+                    </li>
+                    <li class="membership-price-item">
+                        <div class="price-row">
+                            <span class="original-price">₹15,000</span>
+                            <span class="save-badge">SAVE ₹1,000–₹3,000</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="discounted-price">₹14,000–₹12,000</span>
+                            <span class="duration">/ 12 months</span>
+                        </div>
+                    </li>
+                    <li class="membership-price-item">
+                        <div class="price-row">
+                            <span class="original-price"></span>
+                            <span class="save-badge">BEST VALUE</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="discounted-price">₹20,000</span>
+                            <span class="duration">/ 2 years</span>
+                        </div>
+                    </li>
                 </ul>
-                <a href="https://wa.me/919990891966?text=Hi%20Paradise%20Fitness!%20I%20want%20to%20join%20the%20General%20Membership%20(%E2%82%B91,500)." target="_blank" class="btn btn-primary">Get Started</a>
+                <p style="color:var(--text-muted); font-size:0.8rem; margin-bottom:20px;">Multiple discount options available. Contact us for details.</p>
+                <a href="https://wa.me/919990891966?text=Hi%20Paradise%20Fitness!%20I%20want%20to%20know%20more%20about%20membership%20plans." target="_blank" class="btn btn-primary">Enquire Now</a>
             </div>
+
+            <!-- CARD 2: PERSONAL TRAINING (UNCHANGED) -->
             <div class="price-card featured">
                 <span class="popular-badge">🔥 Most Popular</span>
                 <div class="price-icon"><i class="fas fa-user-check"></i></div>
@@ -843,6 +944,8 @@
                 </ul>
                 <a href="https://wa.me/919990891966?text=Hi%20Paradise%20Fitness!%20I%20want%20to%20enroll%20with%20Marshal%20for%20Personal%20Training." target="_blank" class="btn btn-primary">Enroll with Marshal</a>
             </div>
+
+            <!-- CARD 3: FREE TRIAL (UNCHANGED) -->
             <div class="price-card">
                 <div class="price-icon"><i class="fas fa-bolt"></i></div>
                 <h3 class="price-plan-name">Free Trial</h3>
